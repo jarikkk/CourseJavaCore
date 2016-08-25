@@ -87,9 +87,9 @@ public class Arrays {
 
     static int modulus(int array[]) {
         int result = 0;
-        int firstelement = array[0];
-        int lastelement = array[array.length-1];
-        result = firstelement%lastelement;
+        int firstElement = array[0];
+        int lastElement = array[array.length-1];
+        result = firstElement%lastElement;
         return result;
     }
 
