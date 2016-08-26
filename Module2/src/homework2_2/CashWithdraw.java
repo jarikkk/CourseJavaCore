@@ -48,8 +48,13 @@ public class CashWithdraw {
 
     //HOMEWORK 2.4
     static double fundBalance(String ownerName, double fund) {
+        double result1 = 0;
+        int index = searchOwner(ownerName);
+        double balance2 = searchBalance(balances, index);
 
-        return 0;
+        result1 = balance2 + fund;
+
+        return result1;
     }
 
     public static void main(String[] args) {
@@ -63,6 +68,9 @@ public class CashWithdraw {
         double withdrawal2 = 100;
         double balanceAfter2 = withdrawBalance(ownerName, withdrawal2, commision);
 
+        String clientName = "Jack";//task4 case
+        double withdrawal3 = 100;
+
 
         if (balanceAfter >= 0) {//task2 case
             System.out.println("OK " + commision + " " + balanceAfter);
@@ -75,6 +83,8 @@ public class CashWithdraw {
         } else {
             System.out.println(ownerName + " NO");
         }
+
+        System.out.println(clientName + " " + fundBalance(clientName, withdrawal3));//task4 case
 
 
     }
