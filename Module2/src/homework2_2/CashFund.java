@@ -1,6 +1,7 @@
 package homework2_2;
 
-public class OwnerCashWithdraw {
+public class CashFund {
+
     static String[] ownerNames = {"Jane", "Ann", "Jack", "Oww", "Lane"};
     static int[] balances = {1200, 250, 2000, 500, 3200};
 
@@ -22,35 +23,24 @@ public class OwnerCashWithdraw {
         return balance;
     }
 
-    static double withdrawBalance(String ownerName, double withdrawal, double commision) {
-        double result1 = 0;
-        String name = ownerName;
+    static double fundBalance(String ownerName, double fund) {
+        double result = 0;
         int index = searchOwner(ownerName);
         double balance = searchBalance(balances, index);
 
-        double result2 = withdrawal * commision / 100;
-        result1 = balance - withdrawal - result2;
+        result = balance + fund;
 
-        return result1;
+        return result;
     }
 
-    static void printResult(double balanceAfter, String ownerName, double withdrawal){
 
-        if (balanceAfter >= 0) {
-            System.out.println(ownerName + " " + withdrawal + " " + balanceAfter);
-        } else {
-            System.out.println(ownerName + " NO");
-        }
-    }
 
     public static void main(String[] args) {
 
-        double commision = 5.;
-        String ownerName = "Oww";
+        String clientName = "Jack";
         double withdrawal = 100;
-        double balanceAfter = withdrawBalance(ownerName, withdrawal, commision);
 
-        printResult(balanceAfter, ownerName, withdrawal);
+        System.out.println(clientName + " " + fundBalance(clientName, withdrawal));
 
     }
 }
