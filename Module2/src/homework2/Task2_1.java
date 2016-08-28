@@ -1,6 +1,6 @@
-package homework2_1;
+package homework2;
 
-public class Arrays {
+public class Task2_1 {
 
     static int sum(int array[]) {
         int sum = 0;
