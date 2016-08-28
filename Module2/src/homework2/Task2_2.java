@@ -23,7 +23,7 @@ public class Task2_2 {
 
         double balance = 100;
         double withdrawal1 = 10;
-        double commision = 5;
+        double commision = 5.0;
         double balanceAfter = withdrawBalance(balance, withdrawal1, commision);
 
         printResult(balanceAfter, commision);
