@@ -1,32 +1,37 @@
 package homework2;
 
 public class Task2_4 {
+    static String[] ownerNames = {"Jane", "Ann", "Jack", "Oww", "Lane"};
+    static int[] balances = {1200, 250, 2000, 500, 3200};
 
-    static double withdrawBalance(double balance, double withdrawal1, double commision) {
-        double result1 = 0;
+    static int searchOwner(String ownerName) {
+        int index = 0;
+        for (int i = 0; i < ownerNames.length; i++) {
+            if (ownerNames[i].equals(ownerName)) index = i;
 
-        double result2 = withdrawal1 * commision / 100;
-        result1 = balance - withdrawal1 - result2;
-
-        return result1;
+        }
+        return index;
     }
 
-    static void printResult(double balanceAfter, double commision) {
-        if (balanceAfter >= 0) {
-            System.out.println("OK " + commision + " " + balanceAfter);
-        } else {
-            System.out.println("NO");
-        }
+    static double fund(String ownerName, double withdrawal) {
+        double result = 0;
+        int index = searchOwner(ownerName);
+        result = withdrawal + balances[index];
+
+        return result;
+    }
+
+    static void printResult(String ownerName, double balanceAfter) {
+        System.out.println(ownerName + " " + balanceAfter);
     }
 
     public static void main(String[] args) {
 
-        double balance = 100;
-        double withdrawal1 = 10;
-        double commision = 5;
-        double balanceAfter = withdrawBalance(balance, withdrawal1, commision);
+        String ownerName = "Ann";
+        double withdrawal = 100;
+        double balanceAfter = fund(ownerName,withdrawal);
 
-        printResult(balanceAfter, commision);
+        printResult(ownerName, balanceAfter);
 
 
     }
