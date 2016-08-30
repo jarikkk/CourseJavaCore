@@ -35,7 +35,7 @@ public class Task2_1 {
     }
 
     static int max(int array[]) {
-        int max = array[6];
+        int max = array[0];
         for (int i = 0; i < array.length; i++) {
             if (max < array[i]) max = array[i];
         }
@@ -102,14 +102,14 @@ public class Task2_1 {
     }
 
     static int secondLargest(int array[]) {
-        int max = array[6];
-        int secondLargest = array[6];
+        int max = 0;
+        int secondLargest = 0   ;
         for (int i = 0; i < array.length; i++) {
             if (array[i]> max) {
                 secondLargest = max;
                 max = array[i];
             }
-            else if (secondLargest < array[i]) secondLargest = array[i];
+            else if (secondLargest < array[i] && max != array[i]) secondLargest = array[i];
         }
         return secondLargest;
     }
@@ -121,7 +121,7 @@ public class Task2_1 {
             if (array[i] > max) {
                 secondLargest = max;
                 max = array[i];
-            } else if (secondLargest < array[i]) secondLargest = array[i];
+            } else if (secondLargest < array[i] && max != array[i]) secondLargest = array[i];
         }
         return secondLargest;
     }
