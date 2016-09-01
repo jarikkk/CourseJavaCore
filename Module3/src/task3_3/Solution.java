@@ -2,20 +2,15 @@ package task3_3;
 
 public class Solution {
     public static void main(String[] args) {
-        String a = "";
-        String b = "";
-        String[] name = {"Jenny", "Jonny", "Bob", "Gudrun"};
-        String[] teacherNames = {"Marry", "Marry", "Shulz", "Mark"};
+        
+        String[] name = {"Jenny", "Jonny", "Bob", "Gudrun", "Gena"};
+        String[] teacherNames = {"Marry", "Mari", "Shulz", "Mark", "Angelina"};
 
-        for (String s1 : name) a = s1;
-        for (String s2 : name) b = s2;
-
-
-        Course[] courses = new Course[4];
-        for (int i = 0; i < 4; i++) {
-            courses[i] = new Course(a, 24, b);
+        Course[] courses = new Course[5];
+        for (int i = 0; i < courses.length; i++) {
+            courses[i] = new Course(name[i], 24, teacherNames[i]);
         }
-        Course course = new Course("Angelina", 24, "Gena");
+
 
         Student student1 = new Student("Billy", "Jones", 1);
         Student student2 = new Student("Jones", courses);
