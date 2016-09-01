@@ -2,7 +2,7 @@ package task3_3;
 
 public class Solution {
     public static void main(String[] args) {
-        
+
         String[] name = {"Jenny", "Jonny", "Bob", "Gudrun", "Gena"};
         String[] teacherNames = {"Marry", "Mari", "Shulz", "Mark", "Angelina"};
 
