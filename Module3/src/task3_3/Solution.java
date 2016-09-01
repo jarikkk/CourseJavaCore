@@ -5,7 +5,7 @@ public class Solution {
         String a = "";
         String b = "";
         String[] name = {"Jenny", "Jonny", "Bob", "Gudrun"};
-        String[] teacherName = {"Marry", "Marry", "Shulz", "Mark"};
+        String[] teacherNames = {"Marry", "Marry", "Shulz", "Mark"};
 
         for (String s1 : name) a = s1;
         for (String s2 : name) b = s2;
