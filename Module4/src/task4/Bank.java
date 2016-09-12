@@ -1,12 +1,18 @@
+package task4;
+
 
 abstract class Bank {
-    long id;
-    String bankCountry;
-    Currency currency;
-    int numberOfEmployees;
-    double avrSalaryOfEmployee;
-    long rating;
-    long totalCapital;
+    private long id;
+    private String bankCountry;
+    private Currency currency;
+    private int numberOfEmployees;
+    private double avrSalaryOfEmployee;
+    private long rating;
+    private long totalCapital;
+
+    public Bank(Currency currency) {
+        this.currency = currency;
+    }
 
     public long getId() {
         return id;
@@ -64,15 +70,7 @@ abstract class Bank {
         this.totalCapital = totalCapital;
     }
 
-    public Bank(long id, String bankCountry, Currency currency, int numberOfEmployees, double avrSalaryOfEmployee, long rating, long totalCapital) {
-        this.id = id;
-        this.bankCountry = bankCountry;
-        this.currency = currency;
-        this.numberOfEmployees = numberOfEmployees;
-        this.avrSalaryOfEmployee = avrSalaryOfEmployee;
-        this.rating = rating;
-        this.totalCapital = totalCapital;
-    }
+
 
     abstract int getLimitOfWithdrawal();
     abstract int getLimitOfFunding();

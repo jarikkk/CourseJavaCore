@@ -1,3 +1,4 @@
+package task4;
 
 public interface BankSystem {
     void withdrawOfUser(User user, int amount);
