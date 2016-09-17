@@ -3,12 +3,12 @@ package task5_1_and_5_2;
 import java.util.Date;
 
 public class Room {
-    long id;
-    int price;
-    int persons;
-    Date dateAvailableFrom;
-    String hotelName;
-    String cityName;
+    private long id;
+    private int price;
+    private int persons;
+    private Date dateAvailableFrom;
+    private String hotelName;
+    private String cityName;
 
     public long getId() {
         return id;
