@@ -32,4 +32,9 @@ public class TripAdvisorAPI implements API {
         }
         return roomIsFound;
     }
+
+    @Override
+    public Room[] getAll() {
+        return new Room[0];
+    }
 }

@@ -31,4 +31,10 @@ public class BookingComAPI implements API {
         }
         return roomIsFound;
     }
+
+    @Override
+    public Room[] getAll() {
+        return new Room[0];
+    }
+
 }

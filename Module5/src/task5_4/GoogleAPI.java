@@ -33,5 +33,10 @@ public class GoogleAPI implements API {
         return roomIsFound;
     }
 
+    @Override
+    public Room[] getAll() {
+        return new Room[0];
+    }
+
 
 }
