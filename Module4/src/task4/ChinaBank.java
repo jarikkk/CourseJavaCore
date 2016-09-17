@@ -1,8 +1,7 @@
 package task4;
 
 
-import task4.Bank;
-import task4.Currency;
+
 
 public class ChinaBank extends Bank {
 
