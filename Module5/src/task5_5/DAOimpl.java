@@ -20,7 +20,7 @@ public class DAOimpl implements DAO {
     @Override
     public Room update(Room room) {
         if (room != null) System.out.println("Room is saved: " + room.toString());
-        return room;
+        return update(room);
     }
 
     @Override
