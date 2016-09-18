@@ -23,16 +23,17 @@ public class Controller {
 
     public Room[] requestRooms(int price, int persons, String city, String hotel){
 
-        int roomsCount = 0;
-        Room [] rooms = new Room[roomsCount];
+
+        Room [] rooms = new Room[15];
 
         Room [] res1 = apis[0].findRooms(price, persons, city, hotel);
         Room [] res2 = apis[1].findRooms(price, persons, city, hotel);
         Room [] res3 = apis[2].findRooms(price, persons, city, hotel);
 
-        resToArray(res1, roomsCount, rooms);
-        resToArray(res2, roomsCount, rooms);
-        resToArray(res3, roomsCount, rooms);
+
+        resToArray(res1, rooms);
+        resToArray(res2, rooms);
+        resToArray(res3, rooms);
 
         return rooms;
     }
@@ -55,14 +56,15 @@ public class Controller {
         return null;
     }
 
-    public void resToArray(Room [] res, int roomsCount, Room [] rooms){
+    public void resToArray(Room [] res, Room [] rooms){
 
         for (int i = 0; i < res.length; i++){
-            if (res != null) {
-                roomsCount++;
-                rooms[roomsCount] = res[i];
+            if (res[i] != null) {
+
+                rooms[i] = res[i];
             }
         }
+       
     }
 
 }
