@@ -6,6 +6,7 @@ import task5_3.API;
 import task5_4.BookingComAPI;
 import task5_4.GoogleAPI;
 import task5_4.TripAdvisorAPI;
+import task5_5.DAOimpl;
 
 public class Controller {
 
@@ -34,6 +35,11 @@ public class Controller {
         resToArray(res1, rooms);
         resToArray(res2, rooms);
         resToArray(res3, rooms);
+
+        DAOimpl daOimpl = new DAOimpl();
+        for (int i = 0; i < rooms.length; i++)
+            if (rooms[i] != null) daOimpl.save(rooms[i]);
+        else return null;
 
         return rooms;
     }
@@ -64,7 +70,7 @@ public class Controller {
                 rooms[i] = res[i];
             }
         }
-       
+
     }
 
 }
