@@ -12,7 +12,7 @@ public class Main {
 
         Controller controller = new Controller();
 
-        controller.requestRooms(3000, 4, "Kyiv", "Old Hotel");
+        controller.requestRooms(1200, 1, "Kiyv", "Fifth hotel");
         controller.requestRooms(3000, 4, "Kyiv", "Old Hotel");
         controller.requestRooms(3000, 4, "Kyiv", "Old Hotel");
 

@@ -4,6 +4,7 @@ package task5_4;
 import task5_1_and_5_2.Room;
 import task5_3.API;
 
+import java.lang.reflect.Array;
 import java.util.Date;
 
 public class TripAdvisorAPI implements API {
@@ -25,14 +26,23 @@ public class TripAdvisorAPI implements API {
 
 
     @Override
-    public Room[] findRooms(int price, int persons, String city, String hotel) {
-        Room roomIsFound[] = null;
+    public Room[] findRooms(int price, int persons, String cityName, String hotel) {
+        int count = 0;
+        Room[] findRoom = new Room[rooms.length];
+        Room[] roomIsFound = new Room[rooms.length];
+
+        findRoom[0] = new Room(5, price, persons, new Date("15/04/2016 10:00"), hotel, cityName);
+
+
         for (int i = 0; i < rooms.length; i++) {
-            if (rooms[i].equals(findRooms(price, persons, city, hotel))) roomIsFound = new Room[i];
+            if (rooms[i].equals(findRoom[0])) {
+                count++;
+                roomIsFound[count] = rooms[i];
+            }
+
         }
         return roomIsFound;
     }
-
     @Override
     public Room[] getAll() {
         return new Room[0];
