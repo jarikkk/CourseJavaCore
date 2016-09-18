@@ -30,9 +30,9 @@ public class Controller {
         Room [] res2 = apis[1].findRooms(price, persons, city, hotel);
         Room [] res3 = apis[2].findRooms(price, persons, city, hotel);
 
-        checkResult(res1, roomsCount, rooms);
-        checkResult(res2, roomsCount, rooms);
-        checkResult(res3, roomsCount, rooms);
+        resToArray(res1, roomsCount, rooms);
+        resToArray(res2, roomsCount, rooms);
+        resToArray(res3, roomsCount, rooms);
 
         return rooms;
     }
@@ -55,12 +55,12 @@ public class Controller {
         return null;
     }
 
-    public void checkResult(Room [] res, int roomsCount, Room [] rooms){
+    public void resToArray(Room [] res, int roomsCount, Room [] rooms){
 
         for (int i = 0; i < res.length; i++){
             if (res != null) {
                 roomsCount++;
-                rooms[roomsCount-1] = res[i];
+                rooms[roomsCount] = res[i];
             }
         }
     }
