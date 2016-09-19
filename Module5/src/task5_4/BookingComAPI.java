@@ -48,7 +48,12 @@ public class BookingComAPI implements API {
 
     @Override
     public Room[] getAll() {
-        return new Room[0];
+        Room [] getRoom = new Room[rooms.length];
+        for (int i = 0; i < rooms.length; i++) {
+            getRoom[i] = rooms[i];
+        }
+
+        return getRoom;
     }
 
 }
