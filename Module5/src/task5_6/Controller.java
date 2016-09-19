@@ -56,6 +56,7 @@ public class Controller {
         for (int i = 0; i < res1.length; i++) {
             for (int j = 0; j < res2.length; j++) {
                 if (res1[i] == res2[i]) rooms[i] = res1[i];
+                else return null;
             }
             return rooms;
         }
