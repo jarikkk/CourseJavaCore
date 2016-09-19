@@ -38,7 +38,9 @@ public class Controller {
 
         DAOimpl daOimpl = new DAOimpl();
         for (int i = 0; i < rooms.length; i++)
-            if (rooms[i] != null) daOimpl.save(rooms[i]);
+            if (rooms[i] != null) {
+            daOimpl.save(rooms[i]);
+            }
         else return null;
 
         return rooms;
