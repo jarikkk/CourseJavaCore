@@ -22,14 +22,14 @@ public class Controller {
         apis[2] = googleAPI;
     }
 
-    public Room[] requestRooms(int price, int persons, String city, String hotel){
+    public Room[] requestRooms(int price, int persons, String city, String hotel) {
 
 
-        Room [] rooms = new Room[15];
+        Room[] rooms = new Room[15];
 
-        Room [] res1 = apis[0].findRooms(price, persons, city, hotel);
-        Room [] res2 = apis[1].findRooms(price, persons, city, hotel);
-        Room [] res3 = apis[2].findRooms(price, persons, city, hotel);
+        Room[] res1 = apis[0].findRooms(price, persons, city, hotel);
+        Room[] res2 = apis[1].findRooms(price, persons, city, hotel);
+        Room[] res3 = apis[2].findRooms(price, persons, city, hotel);
 
 
         resToArray(res1, rooms);
@@ -39,34 +39,34 @@ public class Controller {
         DAOimpl daOimpl = new DAOimpl();
         for (int i = 0; i < rooms.length; i++)
             if (rooms[i] != null) {
-            daOimpl.save(rooms[i]);
-            }
-        else return null;
+                daOimpl.save(rooms[i]);
+            } else return null;
 
         return rooms;
     }
 
-    public Room[] check(API api1, API api2){
-        //api1.findRooms(0, 0, null, null);
+    public Room[] check(API api1, API api2) {
+
         int roomsCount = 0;
-        Room [] rooms = new Room[roomsCount];
+        Room[] rooms = new Room[roomsCount];
 
         Room res1[] = api1.getAll();
         Room res2[] = api2.getAll();
 
-        for (int i = 0; i < res1.length; i++){
-            for(int j = 0; j < res2.length; j++){
-                if (res1[i] == res2[i]);
+        for (int i = 0; i < res1.length; i++) {
+            for (int j = 0; j < res2.length; j++) {
+                if (res1[i] == res2[i]) rooms[i] = res1[i];
             }
+            return rooms;
         }
 
 
         return null;
     }
 
-    public void resToArray(Room [] res, Room [] rooms){
+    public void resToArray(Room[] res, Room[] rooms) {
 
-        for (int i = 0; i < res.length; i++){
+        for (int i = 0; i < res.length; i++) {
             if (res[i] != null) {
 
                 rooms[i] = res[i];
