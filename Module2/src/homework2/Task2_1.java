@@ -1,5 +1,7 @@
 package homework2;
 
+import task6_1.ArraysUtils;
+
 public class Task2_1 {
 
     static int sum(int array[]) {
@@ -126,10 +128,11 @@ public class Task2_1 {
         return secondLargest;
     }
 
+
+
     public static void main(String[] args) {
         int[] numbers1 = {9000, -7812, 35, -890, 1, 3567, -4908, 10564, 777, -666};
         double[] numbers2 = {-3.75, 7.84, -1.10, 10.51, 4.36, -7.70, 9.52, -64.47, 100.79, -8.88};
-
         System.out.println("sum int is: " + sum(numbers1));
         System.out.println("sum double is: " + sum(numbers2));
         System.out.println("min int is: " + min(numbers1));
@@ -144,5 +147,17 @@ public class Task2_1 {
         System.out.println("modulus double is: " + modulus(numbers2));
         System.out.println("secondLargest int is: " + secondLargest(numbers1));
         System.out.println("secondLargest double is: " + secondLargest(numbers2));
+
+        ArraysUtils.sum(numbers1);
+        ArraysUtils.min(numbers1);
+        ArraysUtils.max(numbers1);
+        ArraysUtils.maxPositive(numbers1);
+        ArraysUtils.multiplication(numbers1);
+        ArraysUtils.modulus(numbers1);
+        ArraysUtils.secondLargest(numbers1);
+        ArraysUtils.reverse(numbers1);
+        ArraysUtils.findEvenElements(numbers1);
+
+
     }
 }
