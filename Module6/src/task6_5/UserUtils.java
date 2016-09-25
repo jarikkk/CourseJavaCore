@@ -4,7 +4,7 @@ import task6_4.User;
 
 public class UserUtils {
 
-    User[] uniqueUsers(User[] users){
+    public User[] uniqueUsers(User[] users){
         return null;
     }
 

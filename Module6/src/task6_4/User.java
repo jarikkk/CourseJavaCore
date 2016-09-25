@@ -15,4 +15,6 @@ public class User {
         this.salary = salary;
         this.balance = balance;
     }
+
+
 }
