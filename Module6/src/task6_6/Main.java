@@ -20,7 +20,7 @@ public class Main {
 
 
         UserUtils.uniqueUsers(user);
-        UserUtils.usersWithContitionalBalance(user, balance[0]);
+        UserUtils.usersWithContitionalBalance(user, 100000);
         UserUtils.paySalaryToUsers(user);
         UserUtils.getUsersId(user);
         UserUtils.deleteEmptyUsers(user);

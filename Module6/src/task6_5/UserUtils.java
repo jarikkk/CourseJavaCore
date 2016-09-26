@@ -6,16 +6,16 @@ public class UserUtils {
 
     public static User[] uniqueUsers(User[] users) {
 
-        User tmp = null;
-        int count = 0;
-        User[] uniqueUsersFound = new User[count];
+        User[] tmp = new User[users.length];
+
+        User[] uniqueUsersFound = new User[users.length];
 
         for (int i = 0; i < users.length; i++) {
-            users[i] = tmp;
-            count++;
+            tmp[i] = users[i];
+
             for (int j = 0; j < users.length; j++) {
                 if (!users[j].equals(tmp)) {
-                    uniqueUsersFound[i] = tmp;
+                    uniqueUsersFound[i] = tmp[i];
                     if (users[j].equals(tmp)) {
                         tmp = null;
                     }
@@ -27,7 +27,17 @@ public class UserUtils {
     }
 
     public static User[] usersWithContitionalBalance(User[] users, int balance) {
-        return null;
+        User user = new User(0, null, null, 0, balance);
+        User [] usersWithContitionalBalance = new User[users.length];
+        for (int i = 0; i < users.length; i++)
+        if (user.getBalance() == balance) {
+            user = users[i];
+        }
+        return users;
+
+
+
+
     }
 
     public static final User[] paySalaryToUsers(User[] users) {
@@ -41,4 +51,6 @@ public class UserUtils {
     public static User[] deleteEmptyUsers(User[] users) {
         return null;
     }
+
+
 }
