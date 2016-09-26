@@ -7,12 +7,23 @@ public class Main {
 
     public static void main(String[] args) {
 
-        User user1 = new User(1, "Jack", "Jackson", 5000, 100000);
-        user1.uniqueUsers();
-        user1.usersWithContitionalBalance();
-        user1.paySalaryToUsers();
-        user1.getUsersId();
-        user1.deleteEmptyUsers();
-        
+        int[] id = {1, 2, 3, 4, 5};
+        String[] firstName = {"Jenny", "Jonny", "Bob", "Gudrun", "Gena"};
+        String[] lastName = {"Kryu", "Bons", "Marly", "Muller", "Ivanov"};
+        int[] salary = {10000, 30000, 17000, 50000, 100000};
+        int[] balance = {100000, 10000, 35000, 350000, 1537988};
+
+        User [] user = new User[id.length];
+        for (int i = 0; i < user.length; i++) {
+            user[i] = new User(id[i], firstName[i], lastName[i], salary[i], balance[i]);
+        }
+
+
+        UserUtils.uniqueUsers(user);
+
+
+
+
+
     }
 }

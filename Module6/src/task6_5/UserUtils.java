@@ -4,7 +4,7 @@ import task6_4.User;
 
 public class UserUtils {
 
-    public User[] uniqueUsers(User[] users) {
+    public static User[] uniqueUsers(User[] users) {
 
         User tmp = null;
         int count = 0;
