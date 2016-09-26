@@ -26,19 +26,19 @@ public class UserUtils {
         return uniqueUsersFound;
     }
 
-    User[] usersWithContitionalBalance(User[] users, int balance) {
+    public static User[] usersWithContitionalBalance(User[] users, int balance) {
         return null;
     }
 
-    final User[] paySalaryToUsers(User[] users) {
+    public static final User[] paySalaryToUsers(User[] users) {
         return null;
     }
 
-    final long[] getUsersId(User[] users) {
+    public static final long[] getUsersId(User[] users) {
         return null;
     }
 
-    User[] deleteEmptyUsers(User[] users) {
+    public static User[] deleteEmptyUsers(User[] users) {
         return null;
     }
 }
