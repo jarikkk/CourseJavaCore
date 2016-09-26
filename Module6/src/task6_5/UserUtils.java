@@ -27,13 +27,18 @@ public class UserUtils {
     }
 
     public static User[] usersWithContitionalBalance(User[] users, int balance) {
-        User user = new User(0, null, null, 0, balance);
-        User [] usersWithContitionalBalance = new User[users.length];
-        for (int i = 0; i < users.length; i++)
-        if (user.getBalance() == balance) {
-            user = users[i];
+        User[] usersWithContitionalBalance = new User[users.length];
+        User [] allUsers = new User[users.length];
+        for (int i = 0; i < users.length; i++){
+            allUsers[i] = users[i];
+            if (allUsers[i].getBalance() == balance){
+                usersWithContitionalBalance[i] = users[i];
+            }
+
         }
-        return users;
+
+
+        return usersWithContitionalBalance;
 
 
 
