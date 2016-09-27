@@ -2,6 +2,8 @@ package task6_5;
 
 import task6_4.User;
 
+import java.util.ArrayList;
+
 public class UserUtils {
 
     public static User[] uniqueUsers(User[] users) {
@@ -62,8 +64,8 @@ public class UserUtils {
 
         long[] idOfusers = new long[users.length];
 
-        for (int i = 0; i < users.length; i++){
-            if (users[i].equals(users[i])){
+        for (int i = 0; i < users.length; i++) {
+            if (users[i].equals(users[i])) {
                 idOfusers[i] = users[i].getId();
             }
         }
@@ -72,8 +74,22 @@ public class UserUtils {
     }
 
     public static User[] deleteEmptyUsers(User[] users) {
-        return null;
+
+        User[] userWithoutempty = null;
+        ArrayList arr = new ArrayList();
+
+
+        for (int i = 0; i < users.length; i++) {
+            arr.add(users[i]);
+        }
+
+        arr.remove(null);
+        userWithoutempty = (User[]) arr.toArray(new User[arr.size()]);
+
+        return userWithoutempty;
     }
 
-
 }
+
+
+
