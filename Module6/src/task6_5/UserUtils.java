@@ -62,9 +62,13 @@ public class UserUtils {
 
         long[] idOfusers = new long[users.length];
 
-        
+        for (int i = 0; i < users.length; i++){
+            if (users[i].equals(users[i])){
+                idOfusers[i] = users[i].getId();
+            }
+        }
 
-        return null;
+        return idOfusers;
     }
 
     public static User[] deleteEmptyUsers(User[] users) {

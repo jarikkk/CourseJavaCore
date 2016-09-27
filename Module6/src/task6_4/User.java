@@ -52,4 +52,8 @@ public class User {
     public void setBalance(int balance) {
         this.balance = balance;
     }
+
+    public long getId() {
+        return id;
+    }
 }
