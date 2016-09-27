@@ -8,17 +8,10 @@ public class Main {
     public static void main(String[] args) {
 
         int[] id = {0, 2, 3, 4, 5};
-        String[] firstName = {null, "Jonny", "Bob", "Gudrun", "Gena"};
-        String[] lastName = {null, "Bons", "Marly", "Muller", "Ivanov"};
-        int[] salary = {0, 30000, 17000, 50000, 100000};
-        int[] balance = {0, 10000, 35000, 350000, 1537988};
-
-        User [] user1 = new User[id.length];
-        user1[0] = new User(0, "Jon", "lol", 30000, 10000);
-        user1[1] = new User(0, "Jon", "lol", 30000, 10000);
-        user1[2] = null;
-        user1[3] = new User(0, "Jon", "lol", 30000, 10000);
-        user1[4] = new User(0, "Jon", "lol", 30000, 10000);
+        String[] firstName = {"Jack", "Jonny", "Bob", "Gudrun", "Gena"};
+        String[] lastName = {"Jaince", "Bons", "Marly", "Muller", "Ivanov"};
+        int[] salary = {19000, 30000, 17000, 50000, 100000};
+        int[] balance = {30000, 10000, 35000, 350000, 1537988};
 
 
         User [] user = new User[id.length];
@@ -32,7 +25,7 @@ public class Main {
         UserUtils.usersWithContitionalBalance(user, 100000);
         UserUtils.paySalaryToUsers(user);
         UserUtils.getUsersId(user);
-        UserUtils.deleteEmptyUsers(user1);
+        UserUtils.deleteEmptyUsers(user);
 
 
 
