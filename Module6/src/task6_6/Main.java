@@ -7,7 +7,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int[] id = {0, 2, 3, 4, 5};
+        int[] id = {1, 2, 3, 4, 5};
         String[] firstName = {"Jack", "Jonny", "Bob", "Gudrun", "Gena"};
         String[] lastName = {"Jaince", "Bons", "Marly", "Muller", "Ivanov"};
         int[] salary = {19000, 30000, 17000, 50000, 100000};
