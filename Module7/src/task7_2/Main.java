@@ -25,25 +25,11 @@ public class Main {
         list.add(new Order(10, 100, Currency.USD, "Razer", "Identificator1", new User(10, "Jack", "Jackson", "Kiev", 40000)));
 
 
-
-        Collections.sort(list, new Comparator<Order>() {
-            @Override
-            public int compare(Order o1, Order o2) {
-                return o1.getPrice() - o2.getPrice();
-            }
-        });
+        Collections.sort(list, Order.comparatorToIncrease);
         System.out.println(list.toString());
 
-        Collections.sort(list, new Comparator<Order>() {
-            @Override
-            public int compare(Order o1, Order o2) {
-                int priceComparison = o1.getPrice().compareTo(o2.getPrice());
-                return priceComparison == 0 ? o1.getUser().compareTo(o2.getUser()) : priceComparison;
-            }
-        });
+        Collections.sort(list, Order.comparatorToDeacreaseAndCityOrder);
         System.out.println(list.toString());
-
-
 
 
     }

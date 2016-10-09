@@ -3,7 +3,7 @@ package task7_1;
 
 import java.util.Comparator;
 
-public class Order {
+public class Order implements Comparator<Order> {
 
 
     private long id;
@@ -23,7 +23,6 @@ public class Order {
     }
 
 
-
     @Override
     public String toString() {
         return "Order{" +
@@ -34,7 +33,6 @@ public class Order {
     public int getPrice() {
         return price;
     }
-
 
 
     public long getId() {
@@ -80,6 +78,34 @@ public class Order {
     public void setUser(User user) {
         this.user = user;
     }
+
+    @Override
+    public int compare(Order o1, Order o2) {
+        return 0;
+    }
+
+    public static Comparator<Order> comparatorToIncrease = new Comparator<Order>() {
+        @Override
+        public int compare(Order o1, Order o2) {
+            return o1.getPrice() - o2.getPrice();
+        }
+    };
+
+    public static Comparator<Order> comparatorToDeacreaseAndCityOrder = new Comparator<Order>() {
+        @Override
+        public int compare(Order o1, Order o2) {
+            if (o1.getPrice() > o2.getPrice()) {
+                return -1;
+            }
+            if (o1.getPrice() < o2.getPrice()) {
+                return 1;
+            }
+            if (o1.getPrice() == o2.getPrice()) return o1.getUser().getCity().compareTo(o2.getUser().getCity());
+            else {
+                return 0;
+            }
+        }
+    };
 
     @Override
     public boolean equals(Object o) {
