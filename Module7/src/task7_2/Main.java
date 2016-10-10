@@ -31,6 +31,9 @@ public class Main {
         Collections.sort(list, Order.comparatorToDeacreaseAndCityOrder);
         System.out.println(list.toString());
 
+        Collections.sort(list, Order.comparatorItemAndShopIdAndUserCity);
+        System.out.println(list.toString());
+
 
     }
 }
