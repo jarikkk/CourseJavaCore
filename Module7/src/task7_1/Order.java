@@ -107,6 +107,20 @@ public class Order implements Comparator<Order> {
         }
     };
 
+    public static Comparator<Order> comparatorItemAndShopIdAndUserCity = new Comparator<Order>() {
+        @Override
+        public int compare(Order o1, Order o2) {
+            int result1 = o1.getItemName().compareTo(o2.getItemName());
+            int result2 = o1.getShopIdentificator().compareTo(o2.getShopIdentificator());
+            int result3 = o1.getUser().getCity().compareTo(o2.getUser().getCity());
+            if (result1 != 0) return result1;
+            if (result1 == 0) return result2;
+            if (result2 == 0) return result3;
+            else return 0;
+
+        }
+    };
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
