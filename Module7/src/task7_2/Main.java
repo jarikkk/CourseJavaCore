@@ -7,12 +7,14 @@ import task7_1.User;
 
 import java.util.*;
 
+import static task7_1.Order.deleteDublicate;
+
 public class Main {
 
     public static void main(String[] args) {
 
         List<Order> list = new ArrayList<>();
-        Order[] order = new Order[list.size()];
+        
 
         list.add(new Order(1, 10000, Currency.UAH, "ASUS", "Identificator1", new User(1, "Jack", "Jackson", "Kiev", 100000)));
         list.add(new Order(2, 1000, Currency.USD, "Lenovo", "Identificator1", new User(2, "Jack", "Jackson", "Kiev", 1000000)));
@@ -35,7 +37,7 @@ public class Main {
         Collections.sort(list, Order.comparatorItemAndShopIdAndUserCity);
         System.out.println(list.toString());
 
-        System.out.println(Order.deleteDublicate(list));
+        System.out.println(deleteDublicate(list));
 
 
     }
