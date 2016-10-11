@@ -7,14 +7,14 @@ import task7_1.User;
 
 import java.util.*;
 
-import static task7_1.Order.deleteDublicate;
+import static task7_1.Order.*;
 
 public class Main {
 
     public static void main(String[] args) {
 
         List<Order> list = new ArrayList<>();
-        
+
 
         list.add(new Order(1, 10000, Currency.UAH, "ASUS", "Identificator1", new User(1, "Jack", "Jackson", "Kiev", 100000)));
         list.add(new Order(2, 1000, Currency.USD, "Lenovo", "Identificator1", new User(2, "Jack", "Jackson", "Kiev", 1000000)));
@@ -28,16 +28,18 @@ public class Main {
         list.add(new Order(10, 100, Currency.USD, "Razer", "Identificator1", new User(10, "Jack", "Jackson", "Kiev", 40000)));
 
 
-        Collections.sort(list, Order.comparatorToIncrease);
+        Collections.sort(list, comparatorToIncrease);
         System.out.println(list.toString());
 
-        Collections.sort(list, Order.comparatorToDeacreaseAndCityOrder);
+        Collections.sort(list, comparatorToDeacreaseAndCityOrder);
         System.out.println(list.toString());
 
-        Collections.sort(list, Order.comparatorItemAndShopIdAndUserCity);
+        Collections.sort(list, comparatorItemAndShopIdAndUserCity);
         System.out.println(list.toString());
 
         System.out.println(deleteDublicate(list));
+
+
 
 
     }
