@@ -1,7 +1,10 @@
 package task7_1;
 
 
+import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.HashSet;
+import java.util.List;
 
 public class Order implements Comparator<Order> {
 
@@ -98,6 +101,7 @@ public class Order implements Comparator<Order> {
                 return -1;
             }
             if (o1.getPrice() < o2.getPrice()) {
+
                 return 1;
             }
             if (o1.getPrice() == o2.getPrice()) return o1.getUser().getCity().compareTo(o2.getUser().getCity());
@@ -120,6 +124,13 @@ public class Order implements Comparator<Order> {
 
         }
     };
+
+   public static List deleteDublicate(List<Order> list){
+       HashSet set = new HashSet(list);
+       list.clear();
+       list.addAll(set);
+return list;
+   }
 
     @Override
     public boolean equals(Object o) {
