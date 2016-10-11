@@ -42,6 +42,9 @@ public class Main {
 
         System.out.println(deleteItemByRule(list));
 
+        System.out.println("Users with currency UAH are:" + Order.seprateByCurrency(list)[0] + "\n"
+                + "Users with currency UAH are:" + Order.seprateByCurrency(list)[1]);
+
 
 
 

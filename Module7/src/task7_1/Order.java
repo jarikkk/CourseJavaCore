@@ -140,6 +140,24 @@ public class Order implements Comparator<Order> {
         return list;
     }
 
+    public static List[] seprateByCurrency(List<Order> list) {
+        List[] result = new ArrayList[2];
+        List<Order> result1 = new ArrayList<Order>();
+        List<Order> result2 = new ArrayList<Order>();
+
+
+        for (Order o : list
+                ) {
+            if (o.getCurrency() == Currency.UAH) result1.add(o);
+            if (o.getCurrency() == Currency.USD) result2.add(o);
+        }
+
+        result[0] = (List) result1;
+        result[1] = (List) result2;
+        return result;
+
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
