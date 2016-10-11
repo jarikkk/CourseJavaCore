@@ -125,12 +125,20 @@ public class Order implements Comparator<Order> {
         }
     };
 
-   public static List deleteDublicate(List<Order> list){
-       HashSet set = new HashSet(list);
-       list.clear();
-       list.addAll(set);
-return list;
-   }
+    public static List deleteDublicate(List<Order> list) {
+        HashSet set = new HashSet(list);
+        list.clear();
+        list.addAll(set);
+        return list;
+    }
+
+    public static List deleteItemByRule(List<Order> list) {
+
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i).getPrice() < 1500) list.remove(i);
+        }
+        return list;
+    }
 
     @Override
     public boolean equals(Object o) {

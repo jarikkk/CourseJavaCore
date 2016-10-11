@@ -16,6 +16,7 @@ public class Main {
         List<Order> list = new ArrayList<>();
 
 
+
         list.add(new Order(1, 10000, Currency.UAH, "ASUS", "Identificator1", new User(1, "Jack", "Jackson", "Kiev", 100000)));
         list.add(new Order(2, 1000, Currency.USD, "Lenovo", "Identificator1", new User(2, "Jack", "Jackson", "Kiev", 1000000)));
         list.add(new Order(3, 600000, Currency.UAH, "Sumsung", "Identificator1", new User(3, "Jack", "Jackson", "Kiev", 700000)));
@@ -38,6 +39,8 @@ public class Main {
         System.out.println(list.toString());
 
         System.out.println(deleteDublicate(list));
+
+        System.out.println(deleteItemByRule(list));
 
 
 
