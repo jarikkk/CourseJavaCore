@@ -145,7 +145,6 @@ public class Order implements Comparator<Order> {
         List<Order> result1 = new ArrayList<Order>();
         List<Order> result2 = new ArrayList<Order>();
 
-
         for (Order o : list
                 ) {
             if (o.getCurrency() == Currency.UAH) result1.add(o);
@@ -154,6 +153,39 @@ public class Order implements Comparator<Order> {
 
         result[0] = (List) result1;
         result[1] = (List) result2;
+        return result;
+
+    }
+
+    public static List[] separateList(List<Order> list) {
+
+        HashSet<String> set = new HashSet<String>();
+        List<String> cities = new ArrayList<>();
+        List[] result = new ArrayList[3];
+
+        List<Order> result1 = new ArrayList<Order>();
+        List<Order> result2 = new ArrayList<Order>();
+        List<Order> result3 = new ArrayList<Order>();
+
+        for (int i = 0; i < list.size(); i++) {
+            set.add(list.get(i).getUser().getCity());
+        }
+
+        for (String item :
+                set) {
+            cities.add(item);
+
+        }
+
+        for (Order o : list) {
+            if (o.getUser().getCity() == cities.get(0)) result1.add(o);
+            if (o.getUser().getCity() == cities.get(1)) result2.add(o);
+            if (o.getUser().getCity() == cities.get(2)) result3.add(o);
+        }
+        result[0] = result1;
+        result[1] = result2;
+        result[2] = result3;
+
         return result;
 
     }

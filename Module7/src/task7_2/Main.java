@@ -30,20 +30,23 @@ public class Main {
 
 
         Collections.sort(list, comparatorToIncrease);
-        System.out.println(list.toString());
+        System.out.println("Sorted:" + list.toString());
 
         Collections.sort(list, comparatorToDeacreaseAndCityOrder);
-        System.out.println(list.toString());
+        System.out.println("Sorted:" + list.toString());
 
         Collections.sort(list, comparatorItemAndShopIdAndUserCity);
-        System.out.println(list.toString());
+        System.out.println("Sorted:" + list.toString());
 
-        System.out.println(deleteDublicate(list));
+        System.out.println("Deleted dublicates:" +deleteDublicate(list));
 
-        System.out.println(deleteItemByRule(list));
+        System.out.println("Deleted with rule:" +deleteItemByRule(list));
 
         System.out.println("Users with currency UAH are:" + Order.seprateByCurrency(list)[0] + "\n"
-                + "Users with currency UAH are:" + Order.seprateByCurrency(list)[1]);
+                + "Users with currency USD are:" + Order.seprateByCurrency(list)[1]);
+
+        System.out.println("Users are in Berlin:" + separateList(list)[0] + "\n" + "Users are in Paris:" + separateList(list)[1] + "\n" +
+                "Users are in Berlin:" + separateList(list)[2]);
 
 
 
