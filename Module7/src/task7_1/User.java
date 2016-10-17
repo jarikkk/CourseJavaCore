@@ -81,4 +81,6 @@ public class User {
         result = 31 * result + balance;
         return result;
     }
+
+
 }

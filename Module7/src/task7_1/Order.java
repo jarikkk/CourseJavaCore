@@ -1,12 +1,9 @@
 package task7_1;
 
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.HashSet;
-import java.util.List;
+import java.util.*;
 
-public class Order implements Comparator<Order> {
+public class Order implements Comparator<Order>, Comparable<Order> {
 
 
     private long id;
@@ -15,6 +12,8 @@ public class Order implements Comparator<Order> {
     private String itemName;
     private String shopIdentificator;
     private User user;
+
+
 
     public Order(long id, int price, Currency currency, String itemName, String shopIdentificator, User user) {
         this.id = id;
@@ -190,6 +189,22 @@ public class Order implements Comparator<Order> {
 
     }
 
+    public static boolean checkIfContains(Set<Order> set) {
+        boolean check = false;
+        String s = "Petrov";
+        Iterator<Order> iterator = set.iterator();
+
+        while (iterator.hasNext()) {
+            String result = iterator.next().getUser().getLastName();
+
+            if (result.contains(s)) {
+                check = true;
+            }
+            
+        }
+        return check;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -215,5 +230,12 @@ public class Order implements Comparator<Order> {
         result = 31 * result + shopIdentificator.hashCode();
         result = 31 * result + user.hashCode();
         return result;
+    }
+
+
+    @Override
+    public int compareTo(Order o) {
+
+        return user.getLastName().compareTo(o.getUser().getLastName());
     }
 }
