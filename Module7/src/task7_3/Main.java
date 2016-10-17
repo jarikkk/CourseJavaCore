@@ -7,6 +7,8 @@ import task7_1.User;
 
 import java.util.*;
 
+import static task7_1.Order.deleteOrdersithUsd;
+
 
 public class Main {
     public static void main(String[] args) {
@@ -29,6 +31,6 @@ public class Main {
 
         System.out.println(o.checkIfContains(set));
         System.out.println(set.last());
-
+        deleteOrdersithUsd(set);
     }
 }

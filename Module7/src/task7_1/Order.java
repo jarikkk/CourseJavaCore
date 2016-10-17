@@ -1,6 +1,6 @@
 package task7_1;
 
-
+import java.lang.Enum;
 import java.util.*;
 
 public class Order implements Comparator<Order>, Comparable<Order> {
@@ -12,7 +12,6 @@ public class Order implements Comparator<Order>, Comparable<Order> {
     private String itemName;
     private String shopIdentificator;
     private User user;
-
 
 
     public Order(long id, int price, Currency currency, String itemName, String shopIdentificator, User user) {
@@ -205,15 +204,17 @@ public class Order implements Comparator<Order>, Comparable<Order> {
         return check;
     }
 
-    public static void printOrder(Set<Order> set) {
-        Iterator<Order> iterator = set.iterator();
+    public static void deleteOrdersithUsd(Set<Order> set) {
+        Set<Order> result = set;
+        Iterator<Order> iterator = result.iterator();
 
         while (iterator.hasNext()) {
+            Enum e = (Enum) iterator.next().getCurrency();
+            if (e == Currency.USD) iterator.remove();
 
-iterator.next().getPrice();
         }
+        System.out.println(result);
     }
-
 
     @Override
     public boolean equals(Object o) {
