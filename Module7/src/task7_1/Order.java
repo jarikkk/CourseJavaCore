@@ -200,10 +200,20 @@ public class Order implements Comparator<Order>, Comparable<Order> {
             if (result.contains(s)) {
                 check = true;
             }
-            
+
         }
         return check;
     }
+
+    public static void printOrder(Set<Order> set) {
+        Iterator<Order> iterator = set.iterator();
+
+        while (iterator.hasNext()) {
+
+iterator.next().getPrice();
+        }
+    }
+
 
     @Override
     public boolean equals(Object o) {

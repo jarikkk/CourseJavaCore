@@ -10,7 +10,7 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        Set<Order> set = new TreeSet();
+        TreeSet<Order> set = new TreeSet();
 
         Order o = new Order(6, 7000, Currency.USD, "DELL", "Identificator1", new User(6, "Jack", "Petrov", "Berlin", 2453875));
 
@@ -28,6 +28,7 @@ public class Main {
 
 
         System.out.println(o.checkIfContains(set));
+        System.out.println(set.last());
 
     }
 }
