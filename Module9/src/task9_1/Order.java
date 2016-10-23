@@ -84,7 +84,7 @@ public class Order implements Comparator<Order>, Comparable<Order> {
     public int compare(Order o1, Order o2) {
         return 0;
     }
-    
+
 
     @Override
     public boolean equals(Object o) {

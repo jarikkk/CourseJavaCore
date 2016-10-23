@@ -3,6 +3,7 @@ package task9_1;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Main {
@@ -23,6 +24,16 @@ public class Main {
         list.add(new Order(10, 100, Currency.USD, "Razer", "Identificator1", new User(10, "Jack", "Jackson", "Kiev", 40000)));
 
         Collections.sort(list, (Order o1, Order o2) -> o1.getPrice() - o2.getPrice());
+
+        list.sort((Order o1, Order o2) -> {if (o1.getPrice() > o2.getPrice()) {
+            return -1;
+        }
+            if (o1.getPrice() < o2.getPrice()) {
+
+                return 1;
+            }});
+
+
 
     }
 }
