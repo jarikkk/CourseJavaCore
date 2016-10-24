@@ -26,7 +26,10 @@ public class Main {
 
         System.out.println("List of unsorted orders: " + list);
         Collections.sort(list, (Order o1, Order o2) -> o1.getPrice() - o2.getPrice());
-        System.out.println("List of sorted orders with increase: " + list);
+        System.out.println("List of sorted orders with increase_________________________________________________________________ ");
+        list.forEach((Order)->System.out.println(Order));
+        System.out.println("_____________________________________________________________________________________________________");
+
 
         list.sort((Order o1, Order o2) -> {
             if (o1.getPrice() > o2.getPrice()) {
@@ -41,9 +44,11 @@ public class Main {
                 return 0;
             }
         });
-        System.out.println("List of sorted orders with decrease and city: " + list);
+        System.out.println("List of sorted orders with decrease and city______________________________________________________________________");
+        list.forEach((Order)->System.out.println(Order));
+        System.out.println("___________________________________________________________________________________________________________________");
 
-        list.sort(Comparator.comparing(Order::getItemName).thenComparing(Order::getShopIdentificator));
+        list.sort(Comparator.comparing(Order::getItemName).thenComparing(Order::getShopIdentificator) );
 
 
 
