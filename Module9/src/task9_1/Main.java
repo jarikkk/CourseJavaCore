@@ -59,6 +59,10 @@ public class Main {
         System.out.println("\n" + "List without dublicates:");
         listWithoutDublicate.forEach((Order)->System.out.println(Order));
 
+        List<Order> deleteItemByRule = list.stream().filter(o -> o.getPrice() > 1500).collect(Collectors.toList());
+        System.out.println("\n" + "List with price more than 1500:");
+        deleteItemByRule.forEach((Order)->System.out.println(Order));
+
 
 
     }
