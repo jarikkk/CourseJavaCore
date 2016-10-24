@@ -1,6 +1,8 @@
 package task9_1;
 
 
+
+
 public class User {
 
     private long id;
@@ -57,6 +59,8 @@ public class User {
         this.balance = balance;
     }
 
+
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -81,6 +85,7 @@ public class User {
         result = 31 * result + balance;
         return result;
     }
+
 
 
 }

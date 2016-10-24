@@ -27,7 +27,12 @@ public class Order implements Comparator<Order>, Comparable<Order> {
     @Override
     public String toString() {
         return "Order{" +
-                "price=" + price +
+                "id=" + id +
+                ", price=" + price +
+                ", currency=" + currency +
+                ", itemName='" + itemName + '\'' +
+                ", shopIdentificator='" + shopIdentificator + '\'' +
+                ", user=" + user +
                 '}';
     }
 
@@ -84,6 +89,7 @@ public class Order implements Comparator<Order>, Comparable<Order> {
     public int compare(Order o1, Order o2) {
         return 0;
     }
+
 
 
     @Override

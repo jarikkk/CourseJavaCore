@@ -12,6 +12,7 @@ public class Main {
 
         List<Order> list = new ArrayList<>();
 
+
         list.add(new Order(1, 10000, Currency.UAH, "ASUS", "Identificator1", new User(1, "Jack", "Jackson", "Kiev", 100000)));
         list.add(new Order(2, 1000, Currency.USD, "Lenovo", "Identificator1", new User(2, "Jack", "Jackson", "Kiev", 1000000)));
         list.add(new Order(3, 600000, Currency.UAH, "Sumsung", "Identificator1", new User(3, "Jack", "Jackson", "Kiev", 700000)));
@@ -23,15 +24,28 @@ public class Main {
         list.add(new Order(10, 100, Currency.USD, "Razer", "Identificator1", new User(10, "Jack", "Jackson", "Kiev", 40000)));
         list.add(new Order(10, 100, Currency.USD, "Razer", "Identificator1", new User(10, "Jack", "Jackson", "Kiev", 40000)));
 
+        System.out.println("List of unsorted orders: " + list);
         Collections.sort(list, (Order o1, Order o2) -> o1.getPrice() - o2.getPrice());
+        System.out.println("List of sorted orders with increase: " + list);
 
-        list.sort((Order o1, Order o2) -> {if (o1.getPrice() > o2.getPrice()) {
-            return -1;
-        }
+        list.sort((Order o1, Order o2) -> {
+            if (o1.getPrice() > o2.getPrice()) {
+                return -1;
+            }
             if (o1.getPrice() < o2.getPrice()) {
 
                 return 1;
-            }});
+            }
+            if (o1.getPrice() == o2.getPrice()) return o1.getUser().getCity().compareTo(o2.getUser().getCity());
+            else {
+                return 0;
+            }
+        });
+        System.out.println("List of sorted orders with decrease and city: " + list);
+
+        list.sort(Comparator.comparing(Order::getItemName).thenComparing(Order::getShopIdentificator));
+
+
 
 
 
