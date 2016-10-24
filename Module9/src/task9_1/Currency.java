@@ -1,6 +1,6 @@
 package task9_1;
 
 
-public enum Currency {
+public enum Currency{
     USD, UAH;
 }

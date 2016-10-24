@@ -28,8 +28,7 @@ public class Main {
         System.out.println("List of unsorted orders: " + list);
         Collections.sort(list, (Order o1, Order o2) -> o1.getPrice() - o2.getPrice());
         System.out.println("\n" + "List of sorted orders with increase: ");
-        list.forEach((Order)->System.out.println(Order));
-
+        list.forEach((Order) -> System.out.println(Order));
 
 
         list.sort((Order o1, Order o2) -> {
@@ -46,24 +45,28 @@ public class Main {
             }
         });
         System.out.println("\n" + "List of sorted orders with decrease and city:");
-        list.forEach((Order)->System.out.println(Order));
+        list.forEach((Order) -> System.out.println(Order));
 
 
         list.sort(Comparator.comparing((Order o1) -> o1.getItemName()).
                 thenComparing(o1 -> o1.getShopIdentificator()).
                 thenComparing(o1 -> o1.getUser().getCity()));
         System.out.println("\n" + "List of sorted orders with item, identity and city:");
-        list.forEach((Order)->System.out.println(Order));
+        list.forEach((Order) -> System.out.println(Order));
 
         List<Order> listWithoutDublicate = list.parallelStream().distinct().collect(Collectors.toList());
         System.out.println("\n" + "List without dublicates:");
-        listWithoutDublicate.forEach((Order)->System.out.println(Order));
+        listWithoutDublicate.forEach((Order) -> System.out.println(Order));
 
         List<Order> deleteItemByRule = list.stream().filter(o -> o.getPrice() > 1500).collect(Collectors.toList());
         System.out.println("\n" + "List with price more than 1500:");
-        deleteItemByRule.forEach((Order)->System.out.println(Order));
+        deleteItemByRule.forEach((Order) -> System.out.println(Order));
 
 
-
+        List<Order> uah = list.stream().filter(o -> o.getCurrency() == Currency.UAH).collect(Collectors.toList());
+        List<Order> usd = list.stream().filter(o -> o.getCurrency() == Currency.USD).collect(Collectors.toList());
+        System.out.println("\n" + "Lists with USD and UAH currency:");
+        uah.forEach((Order) -> System.out.println(Order));
+        usd.forEach((Order) -> System.out.println(Order));
     }
 }
