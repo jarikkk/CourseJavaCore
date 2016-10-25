@@ -88,6 +88,9 @@ public class Main {
         boolean checkIfContains = set.stream().anyMatch(order -> order.getUser().getLastName().contains("Petrov"));
         System.out.println("\n" + "Result of checking is: " + checkIfContains);
 
-        
+
+
+        list.removeIf(order -> order.getCurrency().equals(Currency.USD));
+        System.out.println("\n" + "Result without USD currency: " + list);
     }
 }
