@@ -2,7 +2,9 @@ package task9_1;
 
 
 import java.util.*;
+import java.util.function.BooleanSupplier;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class Main {
 
@@ -28,7 +30,7 @@ public class Main {
         set.add(new Order(4, 20000, Currency.USD, "Sparc", "Identificator4", new User(4, "Jack", "Jackson", "Berlin", 30000)));
         set.add(new Order(5, 2000000, Currency.UAH, "hp", "Identificator5", new User(5, "Jack", "Jackson", "Berlin", 300000000)));
         set.add(new Order(6, 7000, Currency.USD, "DELL", "Identificator6", new User(6, "Jack", "Jackson", "Berlin", 2453875)));
-        set.add(new Order(7, 300000, Currency.UAH, "SONY", "Identificator7", new User(7, "Jack", "Jackson", "Paris", 899000)));
+        set.add(new Order(7, 300000, Currency.UAH, "SONY", "Identificator7", new User(7, "Jack", "Petrov", "Paris", 899000)));
         set.add(new Order(8, 100000, Currency.USD, "Apple", "Identificator8", new User(8, "Jack", "Jackson", "Paris", 50000000)));
         set.add(new Order(10, 100, Currency.USD, "Razer", "Identificator9", new User(10, "Jack", "Jackson", "Kiev", 40000)));
         set.add(new Order(10, 100, Currency.USD, "Razer", "Identificator9", new User(10, "Jack", "Jackson", "Kiev", 40000)));
@@ -82,6 +84,9 @@ public class Main {
         System.out.println("\n" + "Lists separated with cities:");
         listsBycity.forEach((s, orders) -> lists.add(orders));
         lists.forEach((Order) -> System.out.println(Order));
+
+        boolean checkIfContains = set.stream().anyMatch(order -> order.getUser().getLastName().contains("Petrov"));
+        System.out.println("\n" + "Result of checking is: " + checkIfContains);
 
         
     }
