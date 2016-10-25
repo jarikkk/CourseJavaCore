@@ -2,9 +2,8 @@ package task9_1;
 
 
 import java.util.*;
-import java.util.function.BooleanSupplier;
 import java.util.stream.Collectors;
-import java.util.stream.IntStream;
+
 
 public class Main {
 
