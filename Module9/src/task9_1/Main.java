@@ -1,10 +1,7 @@
 package task9_1;
 
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Main {
@@ -68,5 +65,11 @@ public class Main {
         System.out.println("\n" + "Lists with USD and UAH currency:");
         uah.forEach((Order) -> System.out.println(Order));
         usd.forEach((Order) -> System.out.println(Order));
+
+        List<List<Order>> lists = new ArrayList<>();
+        Map<String, List<Order>> listsBycity = list.stream().collect(Collectors.groupingBy(order -> order.getUser().getCity()));
+        System.out.println("\n" + "Lists separated with cities:");
+        listsBycity.forEach((s, orders) -> lists.add(orders));
+        lists.forEach((Order) -> System.out.println(Order));
     }
 }
