@@ -24,7 +24,7 @@ public class TaskException extends Throwable {
 
     public static void main(String[] args) {
 
-        Integer i = null;
+        Integer i = 0;
 
         try {
             TaskException t = new TaskException(i.toString());
