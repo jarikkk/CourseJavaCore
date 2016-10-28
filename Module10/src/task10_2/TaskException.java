@@ -13,15 +13,18 @@ public class TaskException extends Throwable {
     }
 
 
-    public void printString() {
+    public void printString() throws Throwable {
+
         System.out.println("Printed string is: " + string);
+        throw new Throwable();
+
 
     }
 
 
     public static void main(String[] args) {
 
-        Integer i = 0;
+        Integer i = null;
 
         try {
             TaskException t = new TaskException(i.toString());
