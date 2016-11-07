@@ -9,8 +9,8 @@ public class CheckParticularWord {
         CheckParticularWord CheckParticularWord = new CheckParticularWord();
         BufferedReader br = CheckParticularWord.readFromFile();
         String var = CheckParticularWord.calculateWords(br);
-
-
+        int checkWords = CheckParticularWord.checkWord(var);
+        System.out.println(checkWords);
 
     }
 
@@ -18,7 +18,7 @@ public class CheckParticularWord {
         BufferedReader br;
         try {
             return br = new BufferedReader(new FileReader("C:\\TEST.txt"));
-        } catch (FileNotFoundException e) {
+        } catch (IOException e) {
             e.printStackTrace();
             System.out.println("File is not found");
 
@@ -26,6 +26,13 @@ public class CheckParticularWord {
 
         return null;
     }
+
+    public BufferedReader readFromFileWithResources() throws FileNotFoundException, IOException{
+try (BufferedReader br = new BufferedReader(new FileReader("C:\\TEST.txt"))) {
+    return br;
+}
+    }
+
 
     public String calculateWords(BufferedReader bufferedReader) {
         try {
@@ -58,5 +65,17 @@ public class CheckParticularWord {
 
     public int checkWord(String var) {
 
-        return 0;
+        int count = 0;
+        String array[];
+        array = var.split("[ \t,\r\n]");
+        for (String s : array) {
+            if (s.contains("pop")) {
+                count++;
+            } else {
+                System.out.println("0");
+            }
+        }
+
+        return count;
+    }
 }
