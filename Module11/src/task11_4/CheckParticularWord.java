@@ -27,10 +27,10 @@ public class CheckParticularWord {
         return null;
     }
 
-    public BufferedReader readFromFileWithResources() throws FileNotFoundException, IOException{
-try (BufferedReader br = new BufferedReader(new FileReader("C:\\TEST.txt"))) {
-    return br;
-}
+    public BufferedReader readFromFileWithResources() throws FileNotFoundException, IOException {
+        try (BufferedReader br = new BufferedReader(new FileReader("C:\\TEST.txt"))) {
+            return br;
+        }
     }
 
 
