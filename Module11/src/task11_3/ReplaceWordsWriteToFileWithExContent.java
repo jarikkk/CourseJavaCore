@@ -19,7 +19,7 @@ public class ReplaceWordsWriteToFileWithExContent {
     public BufferedReader readFromFile() {
         BufferedReader br;
         try {
-            return br = new BufferedReader(new FileReader("C:\\DATA\\HLAM\\TEST.txt"));
+            return br = new BufferedReader(new FileReader("C:\\TEST.txt"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
             System.out.println("File is not found");
@@ -68,7 +68,7 @@ public class ReplaceWordsWriteToFileWithExContent {
     public void filecontantReplacer(Map<String, String> writeReplace) {
         BufferedWriter  bw;
         try {
-            bw = new BufferedWriter(new FileWriter("C:\\DATA\\HLAM\\TEST.txt", true));
+            bw = new BufferedWriter(new FileWriter("C:\\TEST.txt", true));
         } catch (IOException e) {
             e.printStackTrace();
             return;
