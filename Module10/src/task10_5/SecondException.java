@@ -13,7 +13,4 @@ public class SecondException extends Exception {
         this.exceptionMessege = exceptionMessege;
     }
 
-    public String getExceptionMessege() {
-        return this.exceptionMessege;
-    }
 }

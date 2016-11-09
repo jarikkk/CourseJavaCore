@@ -12,8 +12,5 @@ public class ThirdException extends Exception {
         this.exceptionMessege = exceptionMessege;
     }
 
-    public String getExceptionMessege() {
-        return this.exceptionMessege;
-    }
 
 }

@@ -11,7 +11,4 @@ public class FirstException extends Exception {
         this.exceptionMessege = exceptionMessege;
     }
 
-    public String getExceptionMessege() {
-        return this.exceptionMessege;
-    }
 }
