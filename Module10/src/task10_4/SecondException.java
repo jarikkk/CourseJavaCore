@@ -3,22 +3,18 @@ package task10_4;
 
 public class SecondException extends Throwable {
 
+    private String exceptionMessege = "You have the SecondException";
+
     public SecondException() {
     }
 
     public SecondException(String message) {
         super(message);
+
     }
 
-    public SecondException(String message, Throwable cause) {
-        super(message, cause);
+    public String getExceptionMessege() {
+        return this.exceptionMessege;
     }
 
-    public SecondException(Throwable cause) {
-        super(cause);
-    }
-
-    public SecondException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
-        super(message, cause, enableSuppression, writableStackTrace);
-    }
 }

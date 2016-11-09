@@ -5,21 +5,15 @@ public class ClassException {
 
 
     public void g() throws FirstException {
-        try {
-            throw new FirstException();
-        } finally {
-
-        }
+        throw new FirstException();
     }
 
     public void f() throws SecondException {
         try {
             g();
-
         } catch (FirstException e) {
-            System.out.println("This is first exception with calling method g()");
+            System.out.println(e.getExceptionMessege());
             throw new SecondException();
-
         }
 
 
@@ -31,11 +25,11 @@ public class ClassException {
         try {
             classException.f();
         } catch (SecondException s) {
-            System.out.println("This is second exception with calling method f()");
+            System.out.println(s.getExceptionMessege());
         }
-
-
     }
+
+
 
 
 }

@@ -1,22 +1,19 @@
 package task10_4;
 
 public class FirstException extends Throwable {
+
+    private String exceptionMessege = "You have the FirstException";
+
     public FirstException() {
     }
 
-    public FirstException(String message) {
+    public FirstException(String message, String exceptionMessege) {
         super(message);
+        this.exceptionMessege = exceptionMessege;
     }
 
-    public FirstException(String message, Throwable cause) {
-        super(message, cause);
+    public String getExceptionMessege() {
+        return this.exceptionMessege;
     }
 
-    public FirstException(Throwable cause) {
-        super(cause);
-    }
-
-    public FirstException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
-        super(message, cause, enableSuppression, writableStackTrace);
-    }
 }
