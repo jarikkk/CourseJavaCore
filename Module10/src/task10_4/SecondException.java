@@ -1,7 +1,7 @@
 package task10_4;
 
 
-public class SecondException extends Throwable {
+public class SecondException extends Exception{
 
     private String exceptionMessege = "You have the SecondException";
 
@@ -9,7 +9,7 @@ public class SecondException extends Throwable {
     }
 
     public SecondException(String message) {
-        super(message);
+       this.exceptionMessege = exceptionMessege;
 
     }
 
