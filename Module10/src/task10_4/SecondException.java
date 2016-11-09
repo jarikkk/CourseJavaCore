@@ -8,7 +8,7 @@ public class SecondException extends Exception{
     public SecondException() {
     }
 
-    public SecondException(String message) {
+    public SecondException(String exceptionMessege) {
        this.exceptionMessege = exceptionMessege;
 
     }

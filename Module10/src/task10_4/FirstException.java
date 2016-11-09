@@ -7,7 +7,7 @@ public class FirstException extends Exception {
     public FirstException() {
     }
 
-    public FirstException(String message, String exceptionMessege) {
+    public FirstException(String exceptionMessege) {
 
         this.exceptionMessege = exceptionMessege;
     }
