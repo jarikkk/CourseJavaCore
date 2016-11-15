@@ -24,7 +24,7 @@ public class ClassReplaceWordsWriteToFile {
     public BufferedReader readFromFile() {
         BufferedReader br;
         try {
-            return br = new BufferedReader(new FileReader("C:\\DATA\\HLAM\\TEST.txt"));
+            return br = new BufferedReader(new FileReader("C:\\TEST.txt"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
             System.out.println("File is not found");
@@ -69,7 +69,7 @@ public class ClassReplaceWordsWriteToFile {
 
     public void filecontantReplacer(Map<String, String> writeReplace) {
         try {
-            BufferedWriter bw = new BufferedWriter(new FileWriter("C:\\DATA\\HLAM\\TEST.txt"));
+            BufferedWriter bw = new BufferedWriter(new FileWriter("C:\\TEST.txt"));
             for (String key :
                     writeReplace.keySet()) {
                 bw.write(String.valueOf(writeReplace.get(key)));
