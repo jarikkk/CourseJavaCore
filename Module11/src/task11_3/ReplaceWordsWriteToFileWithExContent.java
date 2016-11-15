@@ -1,6 +1,5 @@
 package task11_3;
 
-
 import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
@@ -8,10 +7,15 @@ import java.util.Map;
 public class ReplaceWordsWriteToFileWithExContent {
     public static void main(String[] args) {
 
-        ReplaceWordsWriteToFileWithExContent ReplaceWordsWriteToFileWithExContent = new ReplaceWordsWriteToFileWithExContent();
-        BufferedReader br = ReplaceWordsWriteToFileWithExContent.readFromFile();
-        Map<String, String> replace = ReplaceWordsWriteToFileWithExContent.replaceWords("pop", "!!!", br);
-        ReplaceWordsWriteToFileWithExContent.filecontantReplacer(replace);
+        String oldString = "pop";
+        String newString = "!!!";
+        Map<String, String> stringsToReplace = new HashMap<>();
+        stringsToReplace.put(oldString, newString);
+
+        ReplaceWordsWriteToFileWithExContent classReplaceWords = new ReplaceWordsWriteToFileWithExContent();
+        BufferedReader br = classReplaceWords.readFromFile();
+        Map<String, String> replace = classReplaceWords.replaceWords(stringsToReplace, br);
+        classReplaceWords.filecontentMerger(replace);
 
 
     }
@@ -29,21 +33,26 @@ public class ReplaceWordsWriteToFileWithExContent {
         return null;
     }
 
-    public Map<String, String> replaceWords(String oldString, String newString, BufferedReader bufferedReader) {
+    public Map<String, String> replaceWords(Map<String, String> stringsToReplace, BufferedReader bufferedReader) {
         Map<String, String> replacer = new HashMap<>();
         try {
             StringBuilder sb = new StringBuilder();
             String line = bufferedReader.readLine();
             while (line != null) {
-                if (!line.equals(oldString)) {
-                    sb.append(line.replace(oldString, newString));
-                    sb.append(System.lineSeparator());
+                String[] s = line.split(" ");
+                for (int i = 0; i < s.length; i++) {
+
+                    if (stringsToReplace.containsKey(s[i])) {
+                        sb.append(stringsToReplace.get(s[i]) + " ");
+                    } else {
+                        sb.append(s[i] + " ");
+                    }
                 }
                 line = bufferedReader.readLine();
             }
             String result = sb.toString();
-            replacer.put(oldString, result);
-            bufferedReader.close();
+
+            replacer.put(stringsToReplace.values().toArray()[0].toString(), result);
             return replacer;
 
 
@@ -51,40 +60,32 @@ public class ReplaceWordsWriteToFileWithExContent {
             e.printStackTrace();
             System.out.println("You have IOexception");
 
-        } finally {
-            try {
-                if (bufferedReader != null) {
-                    bufferedReader.close();
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
         }
 
 
         return null;
     }
 
-    public void filecontantReplacer(Map<String, String> writeReplace) {
-        BufferedWriter  bw;
+    public void filecontentMerger(Map<String, String> writeReplace) {
+        BufferedWriter bw;
         try {
             bw = new BufferedWriter(new FileWriter("C:\\TEST.txt", true));
         } catch (IOException e) {
             e.printStackTrace();
+            System.out.println("read failed");
             return;
         }
         try {
-
-            bw.write("\n" + String.valueOf(writeReplace.get("pop")));
-            bw.close();
-
+            for (String key :
+                    writeReplace.keySet()) {
+                bw.write(String.valueOf(writeReplace.get(key)));
+            }
         } catch (IOException e) {
-            System.out.println("write failed");
+            e.printStackTrace();
         } finally {
             try {
                 if (bw != null) bw.close();
             } catch (IOException e) {
-                System.out.println("You have IO exception");
                 e.printStackTrace();
             }
         }
