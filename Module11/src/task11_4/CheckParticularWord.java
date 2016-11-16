@@ -17,7 +17,7 @@ public class CheckParticularWord {
     public BufferedReader readFromFile() {
         BufferedReader br;
         try {
-            return br = new BufferedReader(new FileReader("C:\\DATA\\HLAM\\TEST.txt"));
+            return br = new BufferedReader(new FileReader("C:\\TEST.txt"));
         } catch (IOException e) {
             e.printStackTrace();
             System.out.println("File is not found");
@@ -52,7 +52,7 @@ public class CheckParticularWord {
 
     public int checkWordWithResourses(String stringToCount) {
         int countWords = 0;
-        try (BufferedReader bufferedReader = new BufferedReader(new FileReader("C:\\DATA\\HLAM\\TEST.txt"))) {
+        try (BufferedReader bufferedReader = new BufferedReader(new FileReader("C:\\TEST.txt"))) {
             String line = bufferedReader.readLine();
             while (line != null) {
                 String[] s = line.split(" ");
